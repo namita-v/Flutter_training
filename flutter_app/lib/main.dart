@@ -7,5 +7,5 @@ import 'package:flutterapp/ui/home.dart';
 
 
 void main() => runApp(new MaterialApp(
-  home: MovieListView(),
+  home: BizCard(),
 ));
