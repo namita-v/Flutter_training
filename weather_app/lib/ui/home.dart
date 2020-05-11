@@ -115,7 +115,10 @@ class _MainScreenState extends State<MainScreen> {
     final weatherResponse = await http.get(uri);
     var response = jsonDecode(weatherResponse.body);
     debugPrint(response['weather'][0]['main']);
-    _weather = Weather(response);
+    setState(() {
+      _weather = Weather(response);
+    });
+
   }
 
   _searchCity(String city) async {
@@ -126,8 +129,7 @@ class _MainScreenState extends State<MainScreen> {
       'appid': 'b4cf8e66f1ea7baa54beef27344a5109',
     };
 
-    var uri = Uri.http(
-        'api.openweathermap.org', '/data/2.5/weather', queryParameters);
+    var uri = Uri.http('api.openweathermap.org', '/data/2.5/weather', queryParameters);
     final cityWeatherResponse = await http.get(uri);
     var response = jsonDecode(cityWeatherResponse.body);
 

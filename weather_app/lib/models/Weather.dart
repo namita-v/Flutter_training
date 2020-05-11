@@ -6,6 +6,8 @@ class Weather {
   String icon;
   String date;
   var formatter = new DateFormat('yyyy-MM-dd');
+
+
   Weather(Map<String, dynamic> data) {
     place = data['name'];
     weather = data['weather'][0]["main"];
